@@ -1,0 +1,15 @@
+.footer-body {
+    display: flex;
+    flex-direction: row;
+    background-color: #3F4137;
+    height: 5vh;
+    font-size: 14px;
+    font-family: 'Arial';
+    justify-content: space-between;
+}
+
+.footer-text {
+    color: #aaa;
+    padding-left: 20px;
+    padding-right: 20px;
+}

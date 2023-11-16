@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    width: 16em;
+    background: #eee;
+    border-right: 1px solid #ccc;
+}
+
+.container ul {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.container li a {
+    text-decoration: none;
+    color: #b9813a;
+    font-size: 20px;
+    font-family: 'Arial';
+    list-style: none;
+}
+
+.container li {
+    content: "🧪";
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container li::before {
+    content: "🧪";
+    margin-right: 0.5em
+}

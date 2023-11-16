@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link type="text/css" href="{% static 'TestsGUI/css/header.css' %}" rel="stylesheet" />
+	<link type="text/css" href="{% static 'TestsGUI/css/base-styles.css' %}" rel="stylesheet" />
+	{% block extra_css %}{% endblock %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'TestsGUI/images/logo_white_ico.ico' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<!-- Body -->
+
+<body>
+
+<div class="main-container">
+
+	<div class="header">
+		<div class="header-menu-left">
+			<div>
+				<a href="{% url 'home' %}">
+						<img class="mian-logo" src="{% static 'TestsGUI/images/logo_white_ico.ico' %}" alt="logo">
+				</a>
+			</div>
+			{% if request.user.is_staff %}
+			<ul>
+				<li><a href="/admin">Admin</a></li>
+			</ul>
+			{% endif %}
+		</div>
+
+		<div class="header-menu-right">
+			<ul>
+				{% if request.user.is_authenticated %}
+					<li><a href="{% url 'logout' %}">Выйти</a></li>
+				{% else %}
+					<li><a href="">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- Sidebar left -->
+	{% block left-sidebar %}
+	{% endblock %}
+	<!-- END Sidebar left -->
+
+
+	<!-- Content -->
+	{% block content %}
+	{% endblock %}
+	<!-- END Content -->
+
+	<!-- Footer -->
+	{% block footer %}
+	{% endblock %}
+	<!-- END Footer -->
+</div>
+
+
+</body>
+</html>

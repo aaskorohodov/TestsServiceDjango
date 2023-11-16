@@ -28,8 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Login url
+LOGIN_URL = '/login/'
+LOGIN_TEMPLATE = 'registration/login.html'
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TestsGUI.apps.TestsguiConfig'
 ]
 
 MIDDLEWARE = [

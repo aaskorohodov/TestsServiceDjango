@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    }
+
+div.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3F4137;
+    height: 5vh;
+    color: #fdc073;
+    font-size: 20px;
+    font-family: 'Arial';
+}
+
+.header-menu-left {
+    display: flex;
+}
+
+.header-menu-left ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-menu-left li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-menu-right {
+    margin-right: 10px;
+    list-style: none;
+}
+
+.header-menu-right li {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-menu-right li a {
+    color: #fdc073;
+    text-decoration: none;
+}
+
+.header-menu-left li a {
+    color: #fdc073;
+    text-decoration: none;
+}
+
+.menu-right {
+    margin-left: auto;
+}
+
+.mian-logo {
+    margin-top: 9px;
+    max-width: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
