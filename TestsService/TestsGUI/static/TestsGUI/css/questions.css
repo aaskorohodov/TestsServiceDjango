@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: #fff;
+}
+
+.centered-frame {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.centered-frame label {
+    display: block;
+    margin-bottom: 10px; /* Adjust vertical spacing between options */
+}

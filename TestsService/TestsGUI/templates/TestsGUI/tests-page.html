@@ -1,0 +1,51 @@
+{% extends 'TestsGUI/base.html' %}
+{% load static %}
+
+
+
+{% block extra_css %}
+    <link type="text/css" href="{% static 'TestsGUI/css/footer.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'TestsGUI/css/questions.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+
+{% block left-sidebar %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+
+        <div class="centered-frame">
+            <h2>{{ question_text }}</h2>
+            <form id="answerForm">
+                <!-- Iterate through answers -->
+                {% for answer in answers %}
+                    <label>
+                        <input type="checkbox" name="answer" value="{{ answer.id }}">
+                        {{ answer.answer_text }}
+                    </label>
+                {% endfor %}
+                <a href="#" onclick="submitForm()">Next</a>
+            </form>
+        </div>
+
+    </div>
+
+
+<script>
+    const nextQuestion = "{{ next_question }}"
+</script>
+
+<script src="{% static 'TestsGUI/js/form_reader.js' %}" defer></script>
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer-body">
+    <p class="footer-text">© 2023 BRANDPOL</p>
+    <p class="footer-text">Department BackEnd</p>
+
+</div>
+{% endblock %}

@@ -13,8 +13,8 @@
 {% block left-sidebar %}
 <div class="container">
     <ul>
-        {% for test in tests %}
-        <li><a href="{{ test.slug }}">{{test.title}}</a></li>
+        {% for test_data in tests %}
+        <li><a href="{{ test_data.question_url }}">{{test_data.test.title}}</a></li>
         {% endfor %}
     </ul>
 </div>

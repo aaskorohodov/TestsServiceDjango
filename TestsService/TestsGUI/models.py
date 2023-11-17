@@ -22,11 +22,20 @@ class Question(models.Model):
     sequence_number = models.IntegerField(default=0)
     is_active = models.BooleanField(default=False)
 
+    def __str__(self):
+        # noinspection PyUnresolvedReferences
+        return f'{self.test.title} - Question #{self.sequence_number}'
+
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer_text = models.CharField(max_length=100)
     is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        answer = self.answer_text[:10]
+        # noinspection PyUnresolvedReferences
+        return f'{self.question.test.title} - Question #{self.question.sequence_number} - {answer}...'
 
 
 class UserProgress(models.Model):
@@ -34,6 +43,10 @@ class UserProgress(models.Model):
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     is_completed = models.BooleanField(default=False)
+
+    def __str__(self):
+
+        return f'{self.user} - {self.question}'
 
 
 class UserHistory(models.Model):
